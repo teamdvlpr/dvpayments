@@ -1,3 +1,3 @@
 # dvpayments
 
-💸 | Plugin to handle payments
+💸 | Plugin to handle payments.
