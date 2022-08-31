@@ -1,0 +1,5 @@
+name: Dvpayments
+version: '${version}'
+main: net.teamdvlpr.dvpayments.DvpaymentsPlugin
+api-version: 1.19
+authors: [ izakdvlpr, ghostnicolas ]
