@@ -1,0 +1,15 @@
+mysql:
+  host: "localhost"
+  port: 3306
+  database: "dvpayments"
+  user: "root"
+  password: "docker"
+smtp:
+  auth:
+    user: c8a42c9a20d813
+    pass: ace58cc170d472
+  driver:
+    host: "smtp.mailtrap.io"
+    port: 2525
+    auth: true
+    tls: true
