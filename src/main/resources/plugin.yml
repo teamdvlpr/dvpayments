@@ -3,7 +3,7 @@ version: '${version}'
 main: net.teamdvlpr.dvpayments.plugin.DvpaymentsPlugin
 api-version: 1.19
 authors: [izakdvlpr, ghostnicolas]
-depend: []
+depend: [TitleAPI]
 commands:
   login:
     aliases: ["logar"]
