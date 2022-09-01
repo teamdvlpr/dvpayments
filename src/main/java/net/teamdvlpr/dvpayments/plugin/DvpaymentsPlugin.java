@@ -1,20 +1,31 @@
 package net.teamdvlpr.dvpayments.plugin;
 
+import net.teamdvlpr.dvpayments.plugin.managers.CommandsManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
-import java.util.logging.Level;
 
 public class DvpaymentsPlugin extends JavaPlugin {
+  public static DvpaymentsPlugin instance;
+
+  public static DvpaymentsPlugin getInstance() {
+    return instance;
+  }
+
+  public DvpaymentsPlugin() {
+    DvpaymentsPlugin.instance = this;
+  }
+
   @Override
   public void onEnable() {
     if (!(new File(getDataFolder(), "config.yml")).exists()) saveDefaultConfig();
 
-    getLogger().log(Level.WARNING, "Plugin Enabled.");
+
+    new CommandsManager(this);
   }
 
   @Override
   public void onDisable() {
-    getLogger().log(Level.WARNING, "Plugin Disabled.");
+
   }
 }

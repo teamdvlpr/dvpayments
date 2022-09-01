@@ -2,4 +2,8 @@ name: Dvpayments
 version: '${version}'
 main: net.teamdvlpr.dvpayments.plugin.DvpaymentsPlugin
 api-version: 1.19
-authors: [ izakdvlpr, ghostnicolas ]
+authors: [izakdvlpr, ghostnicolas]
+depend: []
+commands:
+  login:
+    aliases: ["logar"]
