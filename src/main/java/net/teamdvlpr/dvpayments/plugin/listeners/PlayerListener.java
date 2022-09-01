@@ -2,6 +2,7 @@ package net.teamdvlpr.dvpayments.plugin.listeners;
 
 import com.connorlinfoot.titleapi.TitleAPI;
 import net.teamdvlpr.dvpayments.plugin.DvpaymentsPlugin;
+import net.teamdvlpr.dvpayments.plugin.utils.TextUtil;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -21,8 +22,7 @@ public class PlayerListener implements Listener {
     player.getInventory().clear();
     player.setGameMode(GameMode.SURVIVAL);
 
-    for (byte b1 = 0; b1 < 100; b1++)
-      player.sendMessage("");
+    TextUtil.sendBlankMessages(player);
 
     TitleAPI.sendTitle(player, "§e§lBem-Vindo!", "§aUtilize /login <senha>", 20, 2000, 20);
 

@@ -1,6 +1,7 @@
 package net.teamdvlpr.dvpayments.plugin.commands;
 
 import com.connorlinfoot.titleapi.TitleAPI;
+import net.teamdvlpr.dvpayments.plugin.utils.TextUtil;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,6 +19,8 @@ public class LoginCommand implements CommandExecutor {
     Player player = (Player) sender;
 
     player.playSound(player.getLocation(), Sound.LEVEL_UP, 1.0F, 0.5F);
+
+    TextUtil.sendBlankMessages(player);
 
     TitleAPI.sendTitle(player, "§a§lAutenticado!", "Bom jogo :D", 20, 100, 20);
 
