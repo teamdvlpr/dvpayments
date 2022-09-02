@@ -36,7 +36,7 @@ public class LoginCommand implements CommandExecutor {
 
       return true;
     }
-`
+
     boolean userAlreadyLogged = DvpaymentsPlugin.usersLogged.contains(player.getName());
 
     if (userAlreadyLogged) {
