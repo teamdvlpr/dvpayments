@@ -2,6 +2,8 @@ package net.teamdvlpr.dvpayments.plugin.listeners;
 
 import com.connorlinfoot.titleapi.TitleAPI;
 import net.teamdvlpr.dvpayments.plugin.DvpaymentsPlugin;
+import net.teamdvlpr.dvpayments.plugin.database.models.User;
+import net.teamdvlpr.dvpayments.plugin.database.repositories.UserRepository;
 import net.teamdvlpr.dvpayments.plugin.utils.TextUtil;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
@@ -23,6 +25,16 @@ public class PlayerListener implements Listener {
     player.setGameMode(GameMode.SURVIVAL);
 
     TextUtil.sendBlankMessages(player);
+
+    boolean isCreatedUser = UserRepository.findById(player.getUniqueId().toString()) == null;
+
+    if (isCreatedUser) {
+      TitleAPI.sendTitle(player, "§e§lBem-Vindo!", "§fUtilize /registrar <senha> <senha>", 20, 2000, 20);
+
+      player.sendMessage("§cBem-Vindo! Utilize /registrar <senha> <senha>");
+
+      return;
+    }
 
     TitleAPI.sendTitle(player, "§e§lBem-Vindo!", "§aUtilize /login <senha>", 20, 2000, 20);
 

@@ -1,7 +1,7 @@
 package net.teamdvlpr.dvpayments.plugin;
 
-import net.teamdvlpr.dvpayments.plugin.managers.CommandsManager;
 import net.teamdvlpr.dvpayments.plugin.managers.DatabaseManager;
+import net.teamdvlpr.dvpayments.plugin.managers.CommandsManager;
 import net.teamdvlpr.dvpayments.plugin.managers.ListenersManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,9 +15,9 @@ public class DvpaymentsPlugin extends JavaPlugin {
     return instance;
   }
 
-  private final DatabaseManager databaseManager = new DatabaseManager();
+  private final DatabaseManager databaseConnection = new DatabaseManager();
 
-  public static ArrayList usersLogged = new ArrayList();
+  public static ArrayList<String> usersLogged = new ArrayList<String>();
 
   public DvpaymentsPlugin() {
     DvpaymentsPlugin.instance = this;
@@ -27,7 +27,7 @@ public class DvpaymentsPlugin extends JavaPlugin {
   public void onEnable() {
     if (!(new File(getDataFolder(), "config.yml")).exists()) saveDefaultConfig();
 
-    databaseManager.createConnection(this);
+    databaseConnection.createConnection(this);
 
     new ListenersManager(this);
     new CommandsManager(this);
@@ -35,6 +35,6 @@ public class DvpaymentsPlugin extends JavaPlugin {
 
   @Override
   public void onDisable() {
-    databaseManager.stopConnection();
+    databaseConnection.stopConnection();
   }
 }
