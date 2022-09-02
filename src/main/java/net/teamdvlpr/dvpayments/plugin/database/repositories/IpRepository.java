@@ -19,7 +19,7 @@ public class IpRepository {
       preparedStatement.setString(1, ip);
       preparedStatement.executeUpdate();
     } catch (SQLException e) {
-      Bukkit.getConsoleSender().sendMessage("§4[ZKSecurity/MySQL] There was an error adding the user's ip.");
+      Bukkit.getConsoleSender().sendMessage("§4[DvPayments/MySQL] There was an error adding the user's ip.");
 
       e.printStackTrace();
     }
@@ -31,7 +31,7 @@ public class IpRepository {
 
       return preparedStatement.executeQuery().next();
     } catch (SQLException e) {
-      Bukkit.getConsoleSender().sendMessage("§4[ZKSecurity/MySQL] There was an error getting the ip.");
+      Bukkit.getConsoleSender().sendMessage("§4[DvPayments/MySQL] There was an error getting the ip.");
 
       e.printStackTrace();
     }

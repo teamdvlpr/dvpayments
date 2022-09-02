@@ -50,7 +50,7 @@ public class UserRepository {
         return user;
       }
     } catch (SQLException e) {
-      Bukkit.getConsoleSender().sendMessage("§4[ZKSecurity/MySQL] There was an error getting the user password.");
+      Bukkit.getConsoleSender().sendMessage("§4[DvPayments/MySQL] There was an error getting the user password.");
 
       e.printStackTrace();
     }

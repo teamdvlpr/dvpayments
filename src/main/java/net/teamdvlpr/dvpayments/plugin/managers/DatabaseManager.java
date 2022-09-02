@@ -82,10 +82,10 @@ public class DatabaseManager {
       if (!connection.isClosed()) {
         connection.close();
 
-        Bukkit.getConsoleSender().sendMessage("§6[ZKSecurity/MySQL] Success while Disconnecting to MySQL!");
+        Bukkit.getConsoleSender().sendMessage("§6[DvPayments/MySQL] Success while Disconnecting to MySQL!");
       }
     } catch(Exception exception) {
-      Bukkit.getConsoleSender().sendMessage("§c[ZKSecurity/MySQL] Failed to Disconnect to MySQL!");
+      Bukkit.getConsoleSender().sendMessage("§c[DvPayments/MySQL] Failed to Disconnect to MySQL!");
     }
   }
 
